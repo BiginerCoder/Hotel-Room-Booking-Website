@@ -1,0 +1,24 @@
+<% layout("Layout/boilerPlate.ejs") %>
+<body>
+    <FORM method="get" action="/listing/new"></FORM>
+    <div class="row  row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for(let list of allListings){ %>
+            <a href="/listing/<%= list._id %>" class="listing-link">
+                <div class="card" >
+                <img src="<%= list.image.url %>" class="card-img-top" style="height: 18rem;" alt="...">
+                <div class="card-img-overlay">abcd</div>
+                <div class="card-body">
+                  <p class="card-text">
+                   <%=list.title%> <br>
+                    &#8377;<%= list.price.toLocaleString('en-IN') %> /night
+                </p>
+                </div>
+              </div>
+            </a>
+              <% }%>
+            <ul>
+    </div>
+    
+    
+</ul>
+</body>

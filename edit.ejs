@@ -1,0 +1,36 @@
+<% layout("Layout/boilerPlate.ejs") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-3">
+            <h2>Edit Your Details:</h2>
+            <form action="/listing/<%= listing._id %>?_method=PUT" method="POST">
+                <div class="mb-3">
+                    <label for="title" class="form-label"><b>Title</b></label>
+                    <input name="listing[title]" value = "<%= listing.title %>" type="text" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label"><b>Description</b></label>
+                    <textarea name="listing[description]" class="form-control" required> <%= listing.description %></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label"><b>Image</b></label>
+                    <input name="listing[image][url]" value = "<%= listing.image.url %>" type="text" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label"><b>Price</b></label>
+                    <input name="listing[price]" value = "<%= listing.price %>" type="number" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label"><b>Country</b></label>
+                    <input name="listing[country]" value = "<%= listing.country %>" type="text" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label"><b>Location</b></label>
+                    <input name="listing[location]" value = "<%= listing.location %>" type="text" class="form-control" required>
+                </div>
+            
+                <button class="btn btn-danger">Edit</button>
+            </form>
+        </div> 
+    </div>
+</body>
